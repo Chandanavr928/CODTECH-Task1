@@ -1,0 +1,142 @@
+
+Voter.java
+
+public class Voter {
+    private String name;
+    private String voterId;
+
+    public Voter(String name, String voterId) {
+        this.name = name;
+        this.voterId = voterId;
+    }
+
+    // Getters and Setters
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getVoterId() {
+        return voterId;
+    }
+
+    public void setVoterId(String voterId) {
+        this.voterId = voterId;
+    }
+}
+
+
+Candidate.java
+
+public class Candidate {
+    private String name;
+    private int votes;
+
+    public Candidate(String name) {
+        this.name = name;
+        this.votes = 0;
+    }
+
+    // Getters and Setters
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getVotes() {
+        return votes;
+    }
+
+    public void setVotes(int votes) {
+        this.votes = votes;
+    }
+}
+
+
+OnlineVotingSystem.java
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class OnlineVotingSystem {
+    private List<Voter> voters;
+    private List<Candidate> candidates;
+
+    public OnlineVotingSystem() {
+        this.voters = new ArrayList<>();
+        this.candidates = new ArrayList<>();
+    }
+
+    // Add voter
+    public void addVoter(Voter voter) {
+        voters.add(voter);
+    }
+
+    // Add candidate
+    public void addCandidate(Candidate candidate) {
+        candidates.add(candidate);
+    }
+
+    // Cast vote
+    public void castVote(String voterId, String candidateName) {
+        // Find voter and candidate
+        Voter voter = findVoter(voterId);
+        Candidate candidate = findCandidate(candidateName);
+
+        if (voter != null && candidate != null) {
+            // Increment candidate's vote count
+            candidate.setVotes(candidate.getVotes() + 1);
+            System.out.println("Vote cast successfully!");
+        } else {
+            System.out.println("Invalid voter ID or candidate name.");
+        }
+    }
+
+    // Find voter by ID
+    private Voter findVoter(String voterId) {
+        for (Voter voter : voters) {
+            if (voter.getVoterId().equals(voterId)) {
+                return voter;
+            }
+        }
+        return null;
+    }
+
+    // Find candidate by name
+    private Candidate findCandidate(String candidateName) {
+        for (Candidate candidate : candidates) {
+            if (candidate.getName().equals(candidateName)) {
+                return candidate;
+            }
+        }
+        return null;
+    }
+
+    public static void main(String[] args) {
+        OnlineVotingSystem system = new OnlineVotingSystem();
+
+        // Add voters
+        Voter voter1 = new Voter("John Doe", "V1234");
+        Voter voter2 = new Voter("Jane Doe", "V5678");
+
+        system.addVoter(voter1);
+        system.addVoter(voter2);
+
+        // Add candidates
+        Candidate candidate1 = new Candidate("Candidate A");
+        Candidate candidate2 = new Candidate("Candidate B");
+
+        system.addCandidate(candidate1);
+        system.addCandidate(candidate2);
+
+        // Cast votes
+        system.castVote("V1234", "Candidate A");
+        system.castVote("V5678", "Candidate B");
+    }
+}
