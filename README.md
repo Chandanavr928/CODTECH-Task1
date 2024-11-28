@@ -3,7 +3,6 @@ Company: CODTECH IT SOLUTIONS
 ID: CTO8DS9651
 Domain: .NET
 DURATION: October to November 2024
-Mentor:
 
 Overveiw of the project
 
