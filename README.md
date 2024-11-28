@@ -6,7 +6,7 @@ DURATION: October to November 2024
 
 Overveiw of the project
 
-Project: Personal Expense tracker based on .Net
+Project: Personal Expense tracker and E-Commerce based on .Net
 Objective
 1. Protect the integrity of the vote by preventing voters from casting multiple ballots and ensuring the anonymity of votes, if required.
 2. Allow voters to participate from anywhere, at any time, using various devices, thereby increasing voter turnout.
