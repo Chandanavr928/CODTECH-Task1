@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Expenses Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Personal Expenses Tracker</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#expenses">Expenses</a></li>
+            <li><a href="#add-expense">Add Expense</a></li>
+            <li><a href="#reports">Reports</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="expenses">
+            <h2>Expenses</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Category</th>
+                        <th>Amount</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody id="expenses-table-body">
+                    <!-- Expenses will be displayed here -->
+                </tbody>
+            </table>
+        </section>
+        <section id="add-expense">
+            <h2>Add Expense</h2>
+            <form id="add-expense-form">
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date"><br><br>
+                <label for="category">Category:</label>
+                <select id="category" name="category">
+                    <option value="Food">Food</option>
+                    <option value="Transportation">Transportation</option>
+                    <option value="Entertainment">Entertainment</option>
+                </select><br><br>
+                <label for="amount">Amount:</label>
+                <input type="number" id="amount" name="amount"><br><br>
+                <label for="description">Description:</label>
+                <textarea id="description" name="description"></textarea><br><br>
+                <button type="submit">Add Expense</button>
+            </form>
+        </section>
+        <section id="reports">
+            <h2>Reports</h2>
+            <!-- Reports will be displayed here -->
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
